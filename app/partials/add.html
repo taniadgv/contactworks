@@ -1,12 +1,12 @@
-<form name="myForm" class="formdesign">
+<form name="myForm" class="formdesign" novalidate>
   <div>
     <input name="name" ng-model="contactdata.name" type="text" placeholder="Name" required />
   </div>
   <div>
-    <input integer name="phone" ng-model="contactdata.phone" type="text" placeholder="Phone" required/>
+    <input name="phone" ng-model="contactdata.phone" type="text" placeholder="Phone" required/>
   </div>
   <div>
     <input name="email" ng-model="contactdata.email" type="email" placeholder="Email" required/>
   </div>
-  <button ng-click="save(contactdata)" ng-disabled="isClean()" class="">Save</button>
+  <button ng-disabled="isClean() || myForm.$invalid" ng-click="save(contactdata)">Save</button>
 </form>

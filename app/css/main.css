@@ -358,10 +358,10 @@ a.cnt:hover {
     z-index: 1;
 }
 
-.formdesign input:invalid {
+/*.formdesign input:invalid {
     box-shadow: none;
     outline: none;
-}
+}*/
 
 .formdesign div {
     height: 103px;
@@ -374,15 +374,12 @@ a.cnt:hover {
 
 }
 
-.formdesign .ng-invalid.ng-dirty {
-    -webkit-animation-duration: 1s;
-    -webkit-animation-iteration-count: 1;
-    -webkit-transition-timing-function: ease;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-    transition-timing-function: ease;
-    -webkit-animation-name: shake;
-    animation-name: shake;
+.formdesign input.ng-invalid.ng-dirty {
+    border-bottom: 2px solid #CB000F;
+}
+.formdesign input.ng-valid.ng-dirty {
+    border-bottom: 1px solid #00882D;
+    font-weight: bold;
 }
 
 .formdesign button, .btn {
