@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="contactWorks">
+<head>
+  <meta charset="utf-8">
+  <title>ThoughtWorks Contacts</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet'>
+  <link rel="stylesheet" href="assets/app.css">
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <header>
+      <div id="logo">
+        <a href="#"><img src="img/tw-logo.png" alt="ThoughtWorks Contacts"></a>
+      </div>
+    </header>
+
+    <div id="smartSearch" ng-controller="SearchCtrl">
+      <input ng-model="search" type="text" id="searchBox" placeholder='Who?'/>
+
+      <ul id="searchResults" ng-show="search.length">
+        <li ng-repeat="contact in contacts | filter:{'name': search} | orderBy:'name' | limitTo:6">
+
+          <a href="#/view/{{contact.id}}">{{contact.name}}</a>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+
+    <hr/>
+
+    <div id="contactsList" class="listContainer" ng-controller="ListCtrl">
+      <dl>
+        <dt>...</dt>
+        <dd ng-repeat="contact in contacts">
+          <a class="cnt" href="#/view/{{contact.id}}">{{contact.name}}</a>
+        </dd>
+      </dl>
+    </div>
+
+    <div id="rightViewContainer">
+
+      <div ng-view></div>
+
+    </div>
+  </div>
+
+  <script src="assets/app.js"></script>
+
+ <!--
+  <script src="http://code.angularjs.org/1.2.12/angular.min.js"></script>
+  <script src="http://code.angularjs.org/1.2.12/angular-route.min.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+  -->
+</body>
+</html>

@@ -1,0 +1,13 @@
+<form name="myForm" class="formdesign">
+  <div>
+    <input name="name" ng-model="contactdata.name" required type="text" placeholder="Name" />
+  </div>
+  <div>
+    <input integer name="phone" ng-model="contactdata.phone" required type="text" placeholder="Phone"/>
+  </div>
+  <div>
+    <input name="email" ng-model="contactdata.email" required type="email" placeholder="Email"/>
+  </div>
+  <a href="#/" ng-disabled="isClean()" class="btn btn-left">Done</a>
+  <button ng-click="delete(contactdata.id)" class="btn btn-danger">Delete</button>
+</form>
