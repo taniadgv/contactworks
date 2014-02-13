@@ -92,6 +92,7 @@ module.exports = function(grunt) {
         },
         dest: './app/assets/app.js',
         src: [
+          'bower_components/jquery/jquery.min.js',
           'bower_components/underscore/underscore.js',
           'bower_components/angular/angular.js',
           'bower_components/angular-route/angular-route.js',

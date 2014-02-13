@@ -7,6 +7,7 @@ angular.module('contactWorks', ['ngRoute',
                                'contactWorks.directives'])
 
 .config(['$routeProvider', function ($routeProvider) {
+  console.log('reached configuration');
   $routeProvider.
     when('/', {templateUrl:'partials/add.html', controller:'AddCtrl'}).
     when('/view/:id', { templateUrl:'partials/view.html', controller:'ViewCtrl'}).

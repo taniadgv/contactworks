@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('contactWorks.services', []).service('contacts', function () {
+  console.log('reached contacts service');
 
   var contacts = [];
 
