@@ -30,4 +30,9 @@ describe('Contacts servce', function() {
     expect(contacts.contacts.length).toBe(1);
   });
 
+  it('should get the contact by the given id', function() {
+    var id = contacts.save({name: 'Renan', phone:'5182614001', email:'rmartins@thoughtworks.com'});
+    expect(contacts.get(id)).toEqual({name: 'Renan', phone:'5182614001', email:'rmartins@thoughtworks.com', id: id});
+  });
+
 });
