@@ -1,10 +1,7 @@
 'use strict';
 
 angular.module('contactWorks.services', []).
-        value('version', '0.1').
-        value('localStorage', window.localStorage).
-
-service('contacts', function (localStorage, $rootScope) {
+service('contacts', function () {
 
   var contacts = [];
 

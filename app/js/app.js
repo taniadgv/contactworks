@@ -7,15 +7,9 @@ angular.module('contactWorks', ['ngRoute',
                                'contactWorks.directives'])
 
 .config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.
+  $routeProvider.
     when('/', {templateUrl:'partials/add.html', controller:'AddCtrl'}).
-    when('/view/:id', {
-      templateUrl:'partials/view.html',
-      controller:'ViewCtrl'
-    }).
-    when('/edit/:id', {
-      templateUrl:'partials/edit.html',
-      controller:'EditCtrl'
-    }).
+    when('/view/:id', { templateUrl:'partials/view.html', controller:'ViewCtrl'}).
+    when('/edit/:id', { templateUrl:'partials/edit.html', controller:'EditCtrl'}).
     otherwise({redirectTo:'/'});
 }]);
