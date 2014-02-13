@@ -1,4 +1,0 @@
-describe('ThoughtWorks Contacts', function() {
-
-
-});

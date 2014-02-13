@@ -4,8 +4,13 @@ angular.module('contactWorks.controllers', []);
 
 angular.module('contactWorks.controllers').controller('AddCtrl', ['$scope', '$location', 'contacts', function ($scope, $location, contacts) {
   $scope.contactdata = {};
-  $scope.save = function (contactdata) {
-    var id = contacts.save({name:contactdata.name, phone:contactdata.phone, email:contactdata.email});
+  $scope.save = function () {
+    var id = contacts.save({
+      name: $scope.contactdata.name,
+      phone: $scope.contactdata.phone,
+      email: $scope.contactdata.email
+    });
+
     $location.path('/view/' + id);
   }
 }]);
@@ -35,4 +40,10 @@ angular.module('contactWorks.controllers').controller('SearchCtrl', ['$scope', '
 
 angular.module('contactWorks.controllers').controller('ListCtrl', ['$scope', 'contacts', function ($scope, contacts) {
   $scope.contacts = contacts.contacts;
+
+  $scope.$watch('contacts', function(a) {
+    $scope.groups = _.groupBy($scope.contacts, function(contact) {
+      return contact.name.charAt(0).toUpperCase();
+    });
+  }, true)
 }]);

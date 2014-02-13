@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('contactWorks.services', []).
-service('contacts', function () {
+angular.module('contactWorks.services', []).service('contacts', function () {
 
   var contacts = [];
 
@@ -18,7 +17,7 @@ service('contacts', function () {
   var remove = function (id) {
     for (var i = 0; i < contacts.length; i++) {
         if (contacts[i].id == id) {
-            contacts.splice(i, 1);
+          contacts.splice(i, 1);
         }
     }
   }

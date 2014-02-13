@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="contactWorks">
 <head>
-  <meta charset="utf-8">
   <title>ThoughtWorks Contacts</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet'>
   <link rel="stylesheet" href="assets/app.css">
 </head>
 
 <body>
-
   <div id="wrapper">
     <header>
       <div id="logo">
@@ -31,8 +29,8 @@
     <hr/>
 
     <div id="contactsList" class="listContainer" ng-controller="ListCtrl">
-      <dl>
-        <dt>...</dt>
+      <dl ng-repeat="(group,contacts) in groups">
+        <dt>{{group}}</dt>
         <dd ng-repeat="contact in contacts">
           <a class="cnt" href="#/view/{{contact.id}}">{{contact.name}}</a>
         </dd>
