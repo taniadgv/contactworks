@@ -29,23 +29,6 @@ describe('Edit Controller', function() {
     expect($scope.contactdata).toEqual({});
   });
 
-  it('should properly delegate to contacts service when updating', function() {
-    $scope.contactdata.name = "Tania";
-    $scope.contactdata.phone = "512312321312";
-    $scope.contactdata.email = "tania@thoughtworks.com";
-
-    spyOn(contacts, 'update');
-    $scope.update();
-    expect(contacts.update).toHaveBeenCalledWith({name: "Tania", phone: "512312321312", email: "tania@thoughtworks.com"});
-  });
-
-  it('should change the location path when updating', function() {
-    spyOn(contacts, 'update').andReturn(1);
-    spyOn($location, 'path');
-    $scope.update();
-    expect($location.path).toHaveBeenCalledWith('/view/1');
-  });
-
   it('should properly delegate to contacts service when deleting', function() {
     $scope.contactdata.id = 1;
     spyOn(contacts, 'remove');
@@ -54,7 +37,7 @@ describe('Edit Controller', function() {
     expect(contacts.remove).toHaveBeenCalledWith(1);
   });
 
-   it('should change the location path when deleting', function() {
+  it('should change the location path when deleting', function() {
     spyOn(contacts, 'remove');
     spyOn($location, 'path');
     $scope.delete();

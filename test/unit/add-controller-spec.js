@@ -1,5 +1,5 @@
 describe('Add Controller', function() {
-  var addCtrl, $scope, contacts;
+  var addCtrl, $scope, contacts, $location;
 
   beforeEach(function () {
     module('contactWorks.controllers');
@@ -16,7 +16,7 @@ describe('Add Controller', function() {
       });
     });
 
-    spyOn(contacts, 'save').andReturn(1);;
+    spyOn(contacts, 'save').andReturn(1);
     spyOn($location, 'path');
   });
 

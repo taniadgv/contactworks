@@ -1,5 +1,3 @@
-'use strict';
-
 /*
 When there are multiple directives defined on a single DOM element,
 sometimes it is necessary to specify the order in which the directives are applied.
@@ -9,7 +7,7 @@ Pre-link functions are also run in priority order, but post-link functions are r
 The order of directives with the same priority is undefined. The default priority is 0.
 */
 
-angular.module('contactWorks.directives', []).
+angular.module('contactWorks.directives').
 directive('needConfirmation', [function () {
   return {
     restrict: 'A',
@@ -29,7 +27,7 @@ directive('needConfirmation', [function () {
             }
           });
         }
-      }
+      };
     }
   };
-}])
+}]);

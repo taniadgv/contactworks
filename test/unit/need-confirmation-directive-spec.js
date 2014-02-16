@@ -1,3 +1,5 @@
+'use strict';
+
 describe('Need Confirmation Directive', function() {
   var element, directiveScope, compile;
 
@@ -9,10 +11,10 @@ describe('Need Confirmation Directive', function() {
       compile = $compile;
     });
 
-    var template = "<button need-confirmation ng-click='someAction()'>Delete</button>"
+    var template = "<button need-confirmation ng-click='someAction()'>Delete</button>";
     element = angular.element(template);
 
-    directiveScope.someAction = function() { }
+    directiveScope.someAction = function() { };
     spyOn(directiveScope, 'someAction');
 
     // Compile -> Link. The return of the compile function is the link function!
@@ -37,6 +39,6 @@ describe('Need Confirmation Directive', function() {
     });
     element.click();
     expect(directiveScope.someAction).toHaveBeenCalled();
-  })
+  });
 
 });

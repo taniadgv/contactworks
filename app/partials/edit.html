@@ -8,6 +8,6 @@
   <div>
     <input name="email" ng-model="contactdata.email" required type="email" placeholder="Email"/>
   </div>
-  <a href="#/" class="btn btn-left">Done</a>
+  <a href="#/view/{{contactdata.id}}" class="btn btn-left">Done</a>
   <button need-confirmation ng-click="delete(contactdata.id)" class="btn btn-danger">Delete</button>
 </form>

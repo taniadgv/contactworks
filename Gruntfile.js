@@ -99,10 +99,17 @@ module.exports = function(grunt) {
           'bower_components/angular-animate/angular-animate.js',
 
           //place your JavaScript files here
-          'app/js/controllers.js',
-          'app/js/directives.js',
-          'app/js/filters.js',
-          'app/js/services.js',
+          'app/js/controllers/controllers.js',
+          'app/js/controllers/add-contact.js',
+          'app/js/controllers/edit-contact.js',
+          'app/js/controllers/view-contact.js',
+          'app/js/controllers/list-contacts.js',
+          'app/js/controllers/search-contacts.js',
+          'app/js/directives/directives.js',
+          'app/js/directives/focus.js',
+          'app/js/directives/need-confirmation.js',
+          'app/js/filters/tel.js',
+          'app/js/factories/contacts.js',
           'app/js/app.js'
         ]
       },

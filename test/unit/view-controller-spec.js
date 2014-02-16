@@ -1,5 +1,5 @@
 describe('View Controller', function() {
-  var viewCtrl, $scope, contacts;
+  var viewCtrl, $scope, contacts, $routeParams;
 
   beforeEach(function () {
     module('contactWorks.controllers');
