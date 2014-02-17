@@ -1,0 +1,34 @@
+<html ng-app>
+  <head>
+    <title></title>
+  </head>
+
+  <body>
+
+    <div name="container"
+         ng-init="contacts=[{name:'Renan Martins'}, {name:'Tania Gonzales'}, {name:'Anabela de Malhadas'}]">
+
+      <input type="text" ng-model="newContact" />
+      <button ng-click="contacts.push({name:newContact})">ADD CONTACT</button>
+
+      <!-- add filter:{name:search} -->
+      <ul ng-repeat="contact in contacts | orderBy: 'name' ">
+        <li>{{contact.name}}</li>
+      </ul>
+
+      <hr>
+
+      <!-- add filter:{name:search} -->
+      <ul ng-repeat="contact in contacts | orderBy: '-name' | limitTo:6">
+        <li>{{contact.name | uppercase }}</li>
+      </ul>
+
+      <hr>
+
+      <!-- Filter: <input ng-model="search" type="text" /> -->
+    </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+  </body>
+</html>
+
